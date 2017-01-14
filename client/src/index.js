@@ -2,7 +2,7 @@ import './index.html';
 import './index.less';
 import 'todomvc-app-css/index.css';
 import dva from 'dva';
-import {createModels} from './common/reacteor';
+import reacteor,{createModels} from './common/reacteor';
 
 // 1. Initialize
 const app = dva();
@@ -17,4 +17,6 @@ createModels(app, 'todo', 'users');
 app.router(require('./router'));
 
 // 5. Start
-app.start('#root');
+reacteor.on('loggedIn',function () {
+  app.start('#root');
+});
