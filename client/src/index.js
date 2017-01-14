@@ -11,7 +11,7 @@ const app = dva();
 // app.use();
 
 // 3. Model
-createModels(app, 'todo');
+createModels(app, 'todo', 'users');
 
 // 4. Router
 app.router(require('./router'));
