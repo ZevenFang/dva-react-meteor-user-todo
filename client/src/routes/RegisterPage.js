@@ -24,7 +24,6 @@ class LoginPage extends Component {
     else {
       reacteor.call('createAccount', username, password)
         .then(function (res) {
-          sessionStorage.userId = res;
           alert('Registration success');
           hashHistory.push('/login')
         })

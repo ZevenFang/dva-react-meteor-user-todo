@@ -21,7 +21,6 @@ class LoginPage extends Component {
       reacteor.loginWithPassword({
         username, password
       }).then(res=>{
-        sessionStorage.userId = res;
         hashHistory.push('/');
       }).catch(({reason})=> {
         alert(reason);

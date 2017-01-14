@@ -3,9 +3,10 @@ import { Router, Route } from 'dva/router';
 import IndexPage from './routes/IndexPage';
 import LoginPage from './routes/LoginPage';
 import RegisterPage from './routes/RegisterPage';
+import reacteor from './common/reacteor';
 
 function requireAuth({location}, replace) {
-  if (!sessionStorage.userId)
+  if (!reacteor.loggedIn)
     replace({pathname: '/login'})
 }
 

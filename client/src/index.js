@@ -17,6 +17,10 @@ createModels(app, 'todo', 'users');
 app.router(require('./router'));
 
 // 5. Start
-reacteor.on('loggedIn',function () {
+if (!localStorage.getItem(reacteor.endpoint+'__login_token__'))
   app.start('#root');
-});
+else
+  reacteor.on('loggedIn',function () {
+    if (!app._store)
+      app.start('#root');
+  });
